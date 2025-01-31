@@ -9,9 +9,12 @@ CORS(app)
 
 @app.route("/", methods=["GET"])
 def home():
+    
+    current_datetime = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    
     response_data = {
-        "email": "ayomikunadewemimo@gmail.com",
-        "current_datetime": datetime.utcnow().isoformat(),
+        "email": "ayomikunadewemimo@gmail.com", 
+        "current_datetime": current_datetime, 
         "github_url": "https://github.com/lsraelee/hng12-stage0-backend.git"
     }
     # Serialize JSON while preserving order
